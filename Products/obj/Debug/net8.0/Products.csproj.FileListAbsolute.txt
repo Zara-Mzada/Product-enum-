@@ -1,0 +1,14 @@
+/Users/zara/RiderProjects/Products/Products/bin/Debug/net8.0/Products
+/Users/zara/RiderProjects/Products/Products/bin/Debug/net8.0/Products.deps.json
+/Users/zara/RiderProjects/Products/Products/bin/Debug/net8.0/Products.runtimeconfig.json
+/Users/zara/RiderProjects/Products/Products/bin/Debug/net8.0/Products.dll
+/Users/zara/RiderProjects/Products/Products/bin/Debug/net8.0/Products.pdb
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.AssemblyInfoInputs.cache
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.AssemblyInfo.cs
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.csproj.CoreCompileInputs.cache
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.dll
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/refint/Products.dll
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.pdb
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/Products.genruntimeconfig.cache
+/Users/zara/RiderProjects/Products/Products/obj/Debug/net8.0/ref/Products.dll
