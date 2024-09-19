@@ -30,7 +30,7 @@ namespace Products
             var userChoice = Console.ReadLine();
             int a;
             bool checkChoice = int.TryParse(userChoice, out a);
-
+            
             if (checkChoice)
             {
                 if (Convert.ToInt32(userChoice) == 1)
@@ -202,8 +202,30 @@ namespace Products
                             Console.WriteLine("Choose product id: ");
                             int productCategory = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine("Enter new category: ");
-                            string newCategory = Console.ReadLine();
+                            Console.Write("Choose from this category: \n");
+                            var categories = Enum.GetValues(typeof(Product.Categories));
+                            int counter = 1;
+                            foreach (var category in categories)
+                            {
+                                Console.WriteLine($"{counter}: {category}");
+                                counter++;
+                            }
+                            reCategory:
+                            int choosenCategoryID = Convert.ToInt32(Console.ReadLine());
+                            Product.Categories newCategory;
+                            if (choosenCategoryID == 1)
+                            {
+                                newCategory = Product.Categories.Notebook; 
+                            }
+                            else if (choosenCategoryID == 2)
+                            {
+                                newCategory = Product.Categories.Phone;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Wrong category! Enter again!");
+                                goto reCategory;
+                            }
                             
                             productController.UpdateProductByCategory(productCategory, newCategory);
                             productController.ShowAllProducts();
@@ -295,7 +317,7 @@ namespace Products
                 Console.WriteLine("It is not a number! Enter again!");
                 goto ReEnter;
             }
-            
+            goto ReEnter;
         }
     }
 }

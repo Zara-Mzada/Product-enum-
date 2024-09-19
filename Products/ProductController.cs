@@ -87,12 +87,10 @@ public class ProductController
     }
     
     // Update by property
-    // Burda problem var
-    public void UpdateProductByCategory(int id, string newValue)
+    public void UpdateProductByCategory(int id, Product.Categories newCategory)
     {
         Product curentProduct = (Product)Products[id - 1];
-        string oldValue = curentProduct.Category.ToString();
-        oldValue = newValue;
+        curentProduct.Category = newCategory;
     }
 
     public void UpdateProductByBrand(int id, string newValue)
