@@ -635,15 +635,23 @@ namespace Products
                     if (checkSelled && Regex.IsMatch(selledAmountCon, notEmpty) && Regex.IsMatch(selledAmountCon, positive))
                     {
                         selledAmount = Convert.ToInt32(selledAmountCon);
-                        // int quantity = productController.Products[selledID - 1].Quantity;
+                        if (productController.SellProduct(selledID, selledAmount))
+                        {
+                            goto AfterSell;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Amount is more than quantity. Enter again!");
+                            goto Selled;
+                        }
                     }
                     else
                     {
                         Console.WriteLine("It is not an correct amount! Enter again");
                         goto Selled;
                     }
-                    
-                    productController.SellProduct(selledID, selledAmount);
+
+                    AfterSell:
                     productController.ShowAllProducts();
                     goto ReEnter;
                 }

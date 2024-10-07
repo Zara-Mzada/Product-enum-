@@ -124,9 +124,15 @@ public class ProductController
     }
     
     // Sell product
-    public void SellProduct(int id, int sellAmount)
+    public bool SellProduct(int id, int sellAmount)
     {
         Product currProduct = (Product)Products[id - 1];
-        currProduct.Quantity -= sellAmount;
+        if (currProduct.Quantity >= sellAmount)
+        {
+            currProduct.Quantity -= sellAmount;
+            return true;
+        }
+
+        return false;
     }
 }
