@@ -22,6 +22,7 @@ namespace Products
 // ===============================================================================================================================================
             string regex = "^[A-Za-z]+$";
             string notEmpty = @"\S+";
+            string positive = @"^[0-9]+$";
             
             ReEnter:
             Console.Write("Welcome! Choose a number:\n" +
@@ -98,10 +99,12 @@ namespace Products
                     if (category == "Notebook")
                     {
                         productController.AddProduct(new Product(Product.Categories.Notebook, brand, model, price, quantity));
+                        goto ReEnter;
                     }
                     else if (category == "Phone")
                     {
                         productController.AddProduct(new Product(Product.Categories.Phone, brand, model, price, quantity));
+                        goto ReEnter;
                     }
                     else
                     {
@@ -127,14 +130,17 @@ namespace Products
                         if (showChoice == 1)
                         {
                             productController.ShowAllProducts();
+                            goto ReEnter;
                         }
                         else if (showChoice == 2)
                         {
                             productController.ShowProductsOfNotebook();
+                            goto ReEnter;
                         }
                         else if (showChoice == 3)
                         {
                             productController.ShowProductsOfPhone();
+                            goto ReEnter;
                         }
                         else
                         {
@@ -291,6 +297,7 @@ namespace Products
                             }
                             productController.UpdateFullProduct(id, product);
                             productController.ShowAllProducts();
+                            goto ReEnter;
                         }
                         else if (updateChoice == 2)
                         {
@@ -625,9 +632,10 @@ namespace Products
                     bool checkSelled = int.TryParse(selledAmountCon, out c);
                     int selledAmount;
 
-                    if (checkSelled && Regex.IsMatch(selledAmountCon, notEmpty))
+                    if (checkSelled && Regex.IsMatch(selledAmountCon, notEmpty) && Regex.IsMatch(selledAmountCon, positive))
                     {
                         selledAmount = Convert.ToInt32(selledAmountCon);
+                        // int quantity = productController.Products[selledID - 1].Quantity;
                     }
                     else
                     {
